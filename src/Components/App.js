@@ -102,7 +102,10 @@ const App = () => {
       alert("Please Enter 5 Numbers and Cash to finally create ticket")
     }
     else{
-    alert(updatednumbers);
+      let tempdb=[];
+      updatednumbers.map(num=>num.color ===true? tempdb.push(num.value):'');
+       // eslint-disable-next-line 
+      alert("Ticket has been created with"+"\n"+"Numbers :"+"\n"+tempdb+"\n"+"Total:"+"\n"+totalnumber);
     clear();
     }
   }
