@@ -105,7 +105,7 @@ const App = () => {
       let tempdb=[];
       updatednumbers.map(num=>num.color ===true? tempdb.push(num.value):'');
        // eslint-disable-next-line 
-      alert("Ticket has been created with"+"\n"+"Numbers :"+"\n"+tempdb+"\n"+"Total:"+"\n"+totalnumber);
+      alert("Ticket has been created with"+"\n"+"Numbers :"+"\n"+tempdb+"\n"+"Total:"+"\n"+"$"+totalnumber);
     clear();
     }
   }
