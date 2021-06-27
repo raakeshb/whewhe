@@ -4,7 +4,7 @@ const Cashcontainer = (props) => {
     return (
         <div style={{background:'#FFEBCD'}}>
             <p>Cash:</p>
-            {props.cash.map((cas)=>(<Cash id={cas.id} value={cas.cash} CN={props.Cn}></Cash>))}
+            {props.cash.map((cas)=>(<Cash key={cas.id} id={cas.id} value={cas.cash} CN={props.Cn}></Cash>))}
         </div>
     )
 }

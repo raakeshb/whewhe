@@ -58,8 +58,7 @@ const App = () => {
         position.color = true;
       }
     }
-    console.log(updatednumber)
-    console.log(id)
+
     setNumber(updatednumber);
   }
 
@@ -68,7 +67,6 @@ const App = () => {
     const updatednumbers = [...number];
     let no = 0;
     updatednumbers.map(num => num.color === true ? no = no + 1 : no = no + 0)// to check if user is going to select number more than 5
-    console.log(no);
     if (no < 5) {
       alert("Please Select 5 Numbers.");
     }
@@ -124,7 +122,7 @@ const App = () => {
       position.color = true;
       array.splice(num, 1);
     }
-    console.log(numb)
+   
     setNumber(updatednumber); setTotalnumber(0);
   }
 

@@ -8,7 +8,7 @@ const TotalContainer = (props) => {
     return (
         <div style={{backgroundColor:'#FFEBCD'}}>
         <p>Selected Numbers:</p>
-            {props.Num.map((num)=>num.color === true ? (<Total  value={num.value}></Total>):""   )}  
+            {props.Num.map((num)=>num.color === true ? (<Total key={num.id} value={num.value}></Total>):""   )}  
         <p>Total:</p>
             <p>${props.Cas}</p>
         </div>
