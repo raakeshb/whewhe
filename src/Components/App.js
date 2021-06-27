@@ -45,7 +45,7 @@ const App = () => {
   function numbercollector(id) {
     const updatednumber = [...number];
     const position = updatednumber.find(num => num.id === id);
-    if (position.color === true) {
+    if (position.color === true) {// Used Counter "color" here for knowing whether button is true or false. This Condition checks about it.
       position.color = false;
     }
     else if (position.color === false) {
@@ -65,22 +65,27 @@ const App = () => {
 
 
   function cashvalue(id) {
-    const updatednumbers=[...number];
+    const updatednumbers = [...number];
     let no = 0;
-      updatednumbers.map(num => num.color === true ? no = no + 1 : no = no + 0)// to check if user is going to select number more than 5
-      console.log(no);
-      if (no < 5) {
-        alert("Please Select 5 Numbers.");
-      }
-      else {
-    const updatecash = [...cashnumber];
-    const position = updatecash.find(num => num.id === id);
-    position.times = position.times + 1;
-    setCashnumber(updatecash);
-    
-      }
+    updatednumbers.map(num => num.color === true ? no = no + 1 : no = no + 0)// to check if user is going to select number more than 5
+    console.log(no);
+    if (no < 5) {
+      alert("Please Select 5 Numbers.");
+    }
+    else {
+      const updatecash = [...cashnumber];
+      const position = updatecash.find(num => num.id === id);
+      position.times = position.times + 1;//added counter "times" to know how many times a button is clicked so it can be looped and calculated.
+      setCashnumber(updatecash);
+      let a = 0;
+      const updatedcash = [...cashnumber];
+      updatedcash.forEach((item) => {
+        a = item.cash * item.times + a;
+        setTotalnumber(a);
+      })
   }
-
+  }
+  
   function clear() {
     const updatednumber = [...number];
     updatednumber.map(num => num.color = false);
@@ -91,17 +96,22 @@ const App = () => {
   }
 
   function cashd() {
-    
-    let a = 0;
-    const updatedcash = [...cashnumber];
-    updatedcash.forEach((item) => {
-      a = item.cash * item.times + a;
-    })
-    setTotalnumber(a);
-}
+    const updatednumbers = [...number];
+    let no = 0;
+    updatednumbers.map(num => num.color === true ? no = no + 1 : no = no + 0)
+    if(no < 5)
+    {
+      alert("Please Enter 5 Numbers and Cash to finally create ticket")
+    }
+    else{
+    alert(updatednumbers);
+    clear();
+    }
+  }
+
 
   function random() {
-    let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+    let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]; //Pen and Paper Algorithm for not getting repeated random numbers
     let numb = [];
     const updatednumber = [...number];
     updatednumber.map(num => num.color = false);
