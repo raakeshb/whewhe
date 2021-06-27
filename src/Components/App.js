@@ -42,7 +42,7 @@ const App = () => {
 
 
 
-  function numbercollector(id) {
+  function numbercollector(id) { //Making button selected or unselected
     const updatednumber = [...number];
     const position = updatednumber.find(num => num.id === id);
     if (position.color === true) {// Used Counter "color" here for knowing whether button is true or false. This Condition checks about it.
@@ -64,7 +64,7 @@ const App = () => {
   }
 
 
-  function cashvalue(id) {
+  function cashvalue(id) {//adding cash values
     const updatednumbers = [...number];
     let no = 0;
     updatednumbers.map(num => num.color === true ? no = no + 1 : no = no + 0)// to check if user is going to select number more than 5
@@ -86,7 +86,7 @@ const App = () => {
   }
   }
   
-  function clear() {
+  function clear() {//clear button function
     const updatednumber = [...number];
     updatednumber.map(num => num.color = false);
     const updatedcash=[...cashnumber];
@@ -95,7 +95,7 @@ const App = () => {
     setTotalnumber(0);
   }
 
-  function cashd() {
+  function cashd() {//cash button function
     const updatednumbers = [...number];
     let no = 0;
     updatednumbers.map(num => num.color === true ? no = no + 1 : no = no + 0)
@@ -110,7 +110,7 @@ const App = () => {
   }
 
 
-  function random() {
+  function random() {//random function
     let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]; //Pen and Paper Algorithm for not getting repeated random numbers
     let numb = [];
     const updatednumber = [...number];
